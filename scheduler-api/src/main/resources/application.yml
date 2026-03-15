@@ -1,2 +1,14 @@
 server:
   port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/scheduler
+    username: scheduler
+    password: scheduler
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

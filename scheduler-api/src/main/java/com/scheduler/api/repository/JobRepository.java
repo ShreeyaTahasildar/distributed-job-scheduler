@@ -1,6 +1,6 @@
 package com.scheduler.api.repository;
 
-import com.scheduler.api.entity.Job;
+import com.scheduler.core.entity.Job;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.Instant;

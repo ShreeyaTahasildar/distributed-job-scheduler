@@ -1,6 +1,6 @@
 package com.scheduler.api.service;
 
-import com.scheduler.api.entity.Job;
+import com.scheduler.core.entity.Job;
 import com.scheduler.api.repository.JobRepository;
 import org.springframework.stereotype.Service;
 

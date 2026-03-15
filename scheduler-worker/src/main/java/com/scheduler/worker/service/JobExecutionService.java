@@ -1,7 +1,7 @@
 package com.scheduler.worker.service;
 
 import com.scheduler.worker.repository.JobRepository;
-import com.scheduler.api.entity.Job;
+import com.scheduler.core.entity.Job;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;

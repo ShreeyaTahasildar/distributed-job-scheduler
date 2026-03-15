@@ -1,6 +1,6 @@
 package com.scheduler.api.scheduler;
 
-import com.scheduler.api.entity.Job;
+import com.scheduler.core.entity.Job;
 import com.scheduler.api.repository.JobRepository;
 import com.scheduler.api.producer.JobProducer;
 import org.springframework.scheduling.annotation.Scheduled;

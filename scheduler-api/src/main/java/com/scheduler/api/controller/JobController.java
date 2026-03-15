@@ -1,6 +1,6 @@
 package com.scheduler.api.controller;
 
-import com.scheduler.api.entity.Job;
+import com.scheduler.core.entity.Job;
 import com.scheduler.api.model.JobRequest;
 import com.scheduler.api.service.JobService;
 import org.springframework.web.bind.annotation.*;
