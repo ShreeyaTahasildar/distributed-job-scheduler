@@ -1,8 +1,10 @@
 package com.scheduler.worker.service;
 
 import com.scheduler.worker.repository.JobRepository;
-import com.scheduler.worker.entity.Job;
+import com.scheduler.api.entity.Job;
 import org.springframework.stereotype.Service;
+
+import java.time.Instant;
 
 @Service
 public class JobExecutionService {
@@ -18,27 +20,38 @@ public class JobExecutionService {
         Job job = repository.findById(jobId).orElseThrow();
 
         job.setStatus("RUNNING");
-
         repository.save(job);
 
-        try{
+        try {
 
             System.out.println("Executing job " + jobId);
 
-            // simulate execution
             Thread.sleep(2000);
 
             job.setStatus("SUCCESS");
 
-        }
-        catch(Exception e){
+        } catch(Exception e){
 
-            job.setStatus("FAILED");
+            job.setRetryCount(job.getRetryCount() + 1);
+
+            if(job.getRetryCount() >= job.getMaxRetries()){
+
+                job.setStatus("FAILED");
+
+            } else {
+
+                job.setStatus("RETRYING");
+
+                long delay = (long) Math.pow(2, job.getRetryCount());
+
+                job.setScheduleTime(
+                        Instant.now().plusSeconds(delay)
+                );
+
+            }
 
         }
 
         repository.save(job);
-
     }
-
 }

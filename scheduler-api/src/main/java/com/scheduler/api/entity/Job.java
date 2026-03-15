@@ -24,5 +24,8 @@ public class Job {
 
     private int retryCount;
 
+    private int maxRetries;
+
+    private Instant lastAttemptTime;
 
 }

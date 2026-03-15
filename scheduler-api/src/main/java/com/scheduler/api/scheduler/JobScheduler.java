@@ -23,7 +23,10 @@ public class JobScheduler {
     @Scheduled(fixedRate = 5000)
     public void scheduleJobs(){
 
-        List<Job> jobs = repository.findByStatusAndScheduleTimeBefore("PENDING", Instant.now());
+        List<Job> jobs = repository.findByStatusInAndScheduleTimeBefore(
+                List.of("PENDING","RETRYING"),
+                Instant.now()
+        );
 
         for(Job job : jobs){
 

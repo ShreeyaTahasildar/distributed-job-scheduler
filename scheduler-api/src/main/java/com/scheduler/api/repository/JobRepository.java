@@ -8,4 +8,7 @@ import java.util.List;
 
 public interface JobRepository extends JpaRepository<Job, Long> {
     List<Job> findByStatusAndScheduleTimeBefore(String status, Instant time);
+    List<Job> findByStatusInAndScheduleTimeBefore(
+            List<String> statuses,
+            Instant time);
 }

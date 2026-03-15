@@ -16,7 +16,7 @@ public class JobController {
     }
 
     @PostMapping
-    public String submitJob(@RequestBody JobRequest request) {
+    public Job submitJob(@RequestBody JobRequest request) {
 
         Job job = new Job();
 
@@ -24,10 +24,9 @@ public class JobController {
         job.setPayload(request.getPayload());
         job.setScheduleTime(request.getScheduleTime());
         job.setStatus("PENDING");
-
-        Job savedJob = jobService.save(job);
-
-        return "Job accepted: " + savedJob.getId();
+        job.setRetryCount(0);
+        job.setMaxRetries(3);
+        return jobService.save(job);
     }
 
 }
