@@ -1,0 +1,47 @@
+version: "3.8"
+
+services:
+
+  postgres:
+    image: postgres:15
+    container_name: scheduler-postgres
+    environment:
+      POSTGRES_DB: scheduler
+      POSTGRES_USER: scheduler
+      POSTGRES_PASSWORD: scheduler
+    ports:
+      - "5432:5432"
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+  scheduler-api:
+    build: ../scheduler-api
+    depends_on:
+      - postgres
+      - kafka
+    ports:
+      - "8080:8080"
+
+  scheduler-worker:
+    build: ../scheduler-worker
+    depends_on:
+      - kafka
+      - postgres
+    ports:
+      - "8081:8081"

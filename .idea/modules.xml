@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/distributed-job-scheduler.iml" filepath="$PROJECT_DIR$/distributed-job-scheduler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scheduler-worker/scheduler-worker.iml" filepath="$PROJECT_DIR$/scheduler-worker/scheduler-worker.iml" />
     </modules>
   </component>
 </project>
