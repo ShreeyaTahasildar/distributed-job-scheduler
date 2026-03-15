@@ -1,14 +1,17 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0">
 
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.scheduler</groupId>
     <artifactId>distributed-job-scheduler</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>distributed-job-scheduler</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>scheduler-api</module>
+        <module>scheduler-core</module>
+        <module>scheduler-worker</module>
+    </modules>
 
     <properties>
         <java.version>17</java.version>
