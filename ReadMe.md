@@ -24,3 +24,8 @@ Client → Scheduler API → Kafka Queue → Worker Nodes → Execution
 ## Tech Stack
 
 Java, Spring Boot, Redis, Kafka, Docker, Kubernetes
+
+
+![img.png](img.png)
+
+![img_1.png](img_1.png)
