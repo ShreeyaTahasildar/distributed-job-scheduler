@@ -288,7 +288,3 @@ This project was built to move beyond theoretical system design and understand:
 * how observability helps debug real systems
 
 ---
-
-## Contributions / Feedback
-
-Happy to discuss improvements, tradeoffs, or alternative designs.
