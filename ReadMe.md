@@ -109,7 +109,7 @@ FAILED (after max retries)
 
 ---
 
-## ⚡ Key Features
+## Key Features
 
 ### Durable Job Storage
 
