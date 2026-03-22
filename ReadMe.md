@@ -1,10 +1,10 @@
-# 🚀 Distributed Job Scheduler
+# Distributed Job Scheduler
 
 A distributed, fault-tolerant job scheduling system built to understand how real-world backend infrastructure handles asynchronous execution, retries, and scalability.
 
 ---
 
-## 🧠 Overview
+## Overview
 
 This project simulates a production-style job scheduler where:
 
@@ -18,7 +18,7 @@ This project simulates a production-style job scheduler where:
 
 ---
 
-## ⚙️ Architecture
+## Architecture
 
 ```
 Client
@@ -44,7 +44,7 @@ Execution + Retry Logic
 
 ---
 
-## 🧩 Components
+## Components
 
 ### 1. Scheduler API (`scheduler-api`)
 
@@ -81,7 +81,7 @@ Execution + Retry Logic
 
 ---
 
-## 🔁 Job Lifecycle
+## Job Lifecycle
 
 ```
 PENDING
@@ -111,13 +111,13 @@ FAILED (after max retries)
 
 ## ⚡ Key Features
 
-### ✅ Durable Job Storage
+### Durable Job Storage
 
 Jobs are persisted before being queued to prevent data loss.
 
 ---
 
-### ✅ Asynchronous Processing
+### Asynchronous Processing
 
 Kafka-based queue enables:
 
@@ -127,13 +127,13 @@ Kafka-based queue enables:
 
 ---
 
-### ✅ Distributed Workers
+### Distributed Workers
 
 Multiple workers can consume jobs concurrently.
 
 ---
 
-### ✅ Retry with Exponential Backoff
+### Retry with Exponential Backoff
 
 Failures are retried with increasing delay:
 
@@ -145,7 +145,7 @@ Prevents system overload during repeated failures.
 
 ---
 
-### ✅ Fault Tolerance
+### Fault Tolerance
 
 * failures are expected and handled
 * jobs are not lost on crashes
@@ -153,7 +153,7 @@ Prevents system overload during repeated failures.
 
 ---
 
-### ✅ Observability
+### Observability
 
 * metrics exposed via `/actuator/prometheus`
 * Prometheus scrapes metrics
@@ -161,7 +161,7 @@ Prevents system overload during repeated failures.
 
 ---
 
-## 📊 Metrics & Monitoring
+## Metrics & Monitoring
 
 Metrics tracked include:
 
@@ -177,7 +177,7 @@ Access:
 
 ---
 
-## 🐳 Running the System
+## Running the System
 
 ### 1. Build the project
 
@@ -218,7 +218,7 @@ curl -X POST http://localhost:8080/jobs \
 
 ---
 
-## 🧠 Design Decisions & Tradeoffs
+## Design Decisions & Tradeoffs
 
 ### 1. DB Polling vs Event-Driven Scheduling
 
@@ -248,7 +248,7 @@ curl -X POST http://localhost:8080/jobs \
 
 ---
 
-## 🚧 Future Improvements
+## Future Improvements
 
 * idempotent job execution
 * dead-letter queue for failed jobs
@@ -258,7 +258,7 @@ curl -X POST http://localhost:8080/jobs \
 
 ---
 
-## 💡 Key Learnings
+## Key Learnings
 
 * failures are not edge cases — they are the system
 * observability is critical in distributed systems
@@ -267,7 +267,7 @@ curl -X POST http://localhost:8080/jobs \
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 * Java + Spring Boot
 * Apache Kafka
@@ -278,7 +278,7 @@ curl -X POST http://localhost:8080/jobs \
 
 ---
 
-## 📌 Why This Project
+## Why This Project
 
 This project was built to move beyond theoretical system design and understand:
 
@@ -289,6 +289,6 @@ This project was built to move beyond theoretical system design and understand:
 
 ---
 
-## 🤝 Contributions / Feedback
+## Contributions / Feedback
 
 Happy to discuss improvements, tradeoffs, or alternative designs.
